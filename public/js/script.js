@@ -122,8 +122,6 @@ if (document.body.id === "start") {
   };
 }
 
-
-
 init();
 
 function init() {
@@ -136,79 +134,64 @@ function init() {
   categoryText.innerHTML = categoryChoice;
   let status = false;
 
+  // ------------------- GAME PAGE ---------------------------------------------
+  if (document.body.id === "game") {
+    let categoryFiltered = Words.filter(
+      (word) => word.category === categoryChoice
+    );
+    let randomWord =
+      categoryFiltered[Math.floor(Math.random() * categoryFiltered.length)]
+        .word;
 
-// ------------------- GAME PAGE ---------------------------------------------
-if (document.body.id === "game") {
+    let wordDisplay = [];
 
-  let categoryFiltered = Words.filter(
-    (word) => word.category === categoryChoice
-  );
-  let randomWord =
-    categoryFiltered[Math.floor(Math.random() * categoryFiltered.length)].word;
-  // console.log(randomWord);
-
-  let wordDisplay = [];
-
-  function generateAnswerDisplay(word) {
-    let wordArray = word.split("");
-    for (let i = 0; i < randomWord.length; i++) {
-      if (wordArray[i] !== "-") {
-        wordDisplay.push("_");
+    function generateAnswerDisplay(word) {
+      let wordArray = word.split("");
+      for (let i = 0; i < randomWord.length; i++) {
+        if (wordArray[i] !== "-") {
+          wordDisplay.push("_");
+        }
       }
+      return wordDisplay.join(" ");
     }
-    return wordDisplay.join(" ");
+
+    wordText.innerHTML = generateAnswerDisplay(randomWord);
+    triesLetters, (innerHTML = "");
+
+    buttonVerify.onclick = () => {
+      const answerArray = randomWord.split("");
+      status = false;
+      for (let j = 0; j < randomWord.length; j++) {
+        if (inputValue.value.toLowerCase() === answerArray[j]) {
+          wordDisplay[j] = inputValue.value.toLowerCase();
+          wordText.innerHTML = wordDisplay.join(" ");
+          winCheck = wordDisplay.join("");
+          console.log(winCheck);
+          status = true;
+        }
+      }
+      if (!status) {
+        triesLetters.innerHTML += inputValue.value.toLowerCase();
+        tries--;
+        drawArray[tries]();
+        triesNumber.innerHTML = `Restam ${tries} tentativas`;
+      }
+      if (tries == 0) {
+        triesNumber.innerHTML = "";
+        wordText.innerHTML = "Você perdeu :(";
+        triesNumber.innerHTML = `A palavra era ${randomWord}`;
+      }
+      if (winCheck === randomWord) {
+        wordText.innerHTML = "Ihuul!! Você ganhou :D";
+        triesNumber.innerHTML = "";
+      }
+
+      inputValue.value = "";
+    };
+    restartBtn.addEventListener("click", () => {
+      init();
+    });
   }
-
-  wordText.innerHTML = generateAnswerDisplay(randomWord);
-  triesLetters, (innerHTML = "");
-
-  buttonVerify.onclick = () => {
-    const answerArray = randomWord.split("");
-    status = false
-    for (let j = 0; j < randomWord.length; j++) {
-      if (inputValue.value.toLowerCase() === answerArray[j]) {
-        wordDisplay[j] = inputValue.value.toLowerCase();
-        wordText.innerHTML = wordDisplay.join(" ");
-        winCheck = wordDisplay.join("");
-        console.log(winCheck);
-        status = true;
-      }
-    }
-    if (!status) {
-      triesLetters.innerHTML += inputValue.value.toLowerCase();
-      tries--;
-      drawArray[tries]();
-      // animateMan();
-
-      triesNumber.innerHTML = `Restam ${tries} tentativas`;
-    }
-    if (tries == 0) {
-      triesNumber.innerHTML = "";
-      wordText.innerHTML = "Você perdeu :(";
-      triesNumber.innerHTML = `A palavra era ${randomWord}`;
-    }
-    if (winCheck === randomWord) {
-      wordText.innerHTML = "Ihuul!! Você ganhou :D";
-      triesNumber.innerHTML = "";
-    }
-
-    inputValue.value = "";
-  };
-
-  // function animateMan() {
-  //   drawArray[tries]();
-  // }
-  // inputValue.addEventListener("keypress", (event) => {
-  //   if (event.key === "Enter") {
-  //     // event.preventDefault();
-  //     buttonVerify.click();
-  //   }
-  // });
-  restartBtn.addEventListener("click", () => {
-    init();
-  });
-}
-
 }
 function canva() {
   ctx.fillStyle = "#010b2f";
