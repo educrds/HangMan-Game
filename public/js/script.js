@@ -108,7 +108,6 @@ const Words = [
     category: "Esportes",
   },
 ];
-
 // ------------------- BEGIN PAGE ---------------------------------------------
 if (document.body.id === "start") {
   document.querySelector("#Animal").onclick = () => {
