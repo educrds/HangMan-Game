@@ -29,7 +29,7 @@ body {
 }
 .title {
   position: absolute;
-  top: 50px;
+  top: 40px;
   font-size: 32px;
   z-index: 1;
 }
@@ -52,7 +52,7 @@ body {
   position: absolute;
   font-size: 16px;
   top: 360px;
-  color: #006ccb;
+  color: #d00000;
   z-index: 1;
   letter-spacing: 7px;
 }
@@ -138,4 +138,8 @@ body {
 .container-fluid a{
   text-decoration: none;
   color: #e2eefa;
+}
+#Animal:hover, #Time:hover, #Esportes:hover{
+  background-color: #e2eefa;
+  color: #010b2f;
 }
