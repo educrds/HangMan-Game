@@ -78,11 +78,16 @@ body {
   top: 530px;
   z-index: 1;
 }
-.button-desistir {
+.button-desistir{
+  right: 240px;
+}
+.button-reiniciar {
+  left: 220px;
+}
+.button-desistir, .button-reiniciar {
   position: absolute;
   font-size: 16px;
   top: 600px;
-  right: 240px;
   background-color: #010b2f;
   color: #e2eefa;
   border-color: #e2eefa;
@@ -92,34 +97,14 @@ body {
   -webkit-box-shadow: 5px 5px 0px 2px rgba(255, 255, 255);
   -moz-box-shadow: 5px 5px 0px 2px rgba(255,255,255);
 }
-.button-desistir:hover{
-  background-color: #e2eefa;
-  color: #010b2f;
-}
-.button-desistir a{
+.button-desistir a, .button-reiniciar a, .container-fluid a{
   text-decoration: none;
   color: #e2eefa;
 }
-.button-reiniciar {
-  position: absolute;
-  font-size: 16px;
-  top: 600px;
-  left: 220px;
-  background-color: #010b2f;
-  color: #e2eefa;
-  border-radius: 0;
-  z-index: 1;
-  box-shadow: 5px 5px 0px 2px rgba(255, 255, 255);
-  -webkit-box-shadow: 5px 5px 0px 2px rgba(255, 255, 255);
-  -moz-box-shadow: 5px 5px 0px 2px rgba(255,255,255);
-}
-.button-reiniciar:hover{
+
+.button-reiniciar:hover, .button-desistir:hover{
   background-color: #e2eefa;
   color: #010b2f;
-}
-.button-reiniciar a{
-  text-decoration: none;
-  color: #e2eefa;
 }
 .container-fluid{
   position: absolute;
@@ -134,10 +119,6 @@ body {
   box-shadow: 4px 4px 0px 2px rgba(255, 255, 255);
   -webkit-box-shadow: 4px 4px 0px 2px rgba(255, 255, 255);
   -moz-box-shadow: 4px 4px 0px 2px rgba(255,255,255);
-}
-.container-fluid a{
-  text-decoration: none;
-  color: #e2eefa;
 }
 #Animal:hover, #Time:hover, #Esportes:hover{
   background-color: #e2eefa;
