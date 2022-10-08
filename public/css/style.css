@@ -78,7 +78,7 @@ body {
   top: 530px;
   z-index: 1;
 }
-.button1 {
+.button-desistir {
   position: absolute;
   font-size: 16px;
   top: 600px;
@@ -92,15 +92,15 @@ body {
   -webkit-box-shadow: 5px 5px 0px 2px rgba(255, 255, 255);
   -moz-box-shadow: 5px 5px 0px 2px rgba(255,255,255);
 }
-.button1:hover{
+.button-desistir:hover{
   background-color: #e2eefa;
   color: #010b2f;
 }
-.button1 a{
+.button-desistir a{
   text-decoration: none;
   color: #e2eefa;
 }
-.button2 {
+.button-reiniciar {
   position: absolute;
   font-size: 16px;
   top: 600px;
@@ -113,11 +113,11 @@ body {
   -webkit-box-shadow: 5px 5px 0px 2px rgba(255, 255, 255);
   -moz-box-shadow: 5px 5px 0px 2px rgba(255,255,255);
 }
-.button2:hover{
+.button-reiniciar:hover{
   background-color: #e2eefa;
   color: #010b2f;
 }
-.button2 a{
+.button-reiniciar a{
   text-decoration: none;
   color: #e2eefa;
 }
