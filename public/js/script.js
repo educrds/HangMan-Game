@@ -124,6 +124,7 @@ if (document.body.id === "start") {
 init();
 
 function init() {
+  inputValue.focus();
   ctx.clearRect(0, 0, 300, 300);
   canva();
   tries = 10;
