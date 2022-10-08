@@ -187,6 +187,12 @@ function init() {
 
       inputValue.value = "";
     };
+
+    inputValue.addEventListener("keyup",  (event) =>{
+      if (event.key === "Enter") {
+        buttonVerify.click();
+      }
+    });
     restartBtn.addEventListener("click", () => {
       init();
     });
