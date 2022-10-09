@@ -161,39 +161,43 @@ function init() {
     inputValue.addEventListener("keydown", (event) => {
       event.preventDefault();
       if (event.key === "Enter") {
-        buttonVerify.click();
+
+        buttonVerify.onclick = () => {
+          const answerArray = randomWord.split("");
+          status = false;
+          for (let j = 0; j < randomWord.length; j++) {
+            if (inputValue.value.toLowerCase() === answerArray[j]) {
+              wordDisplay[j] = inputValue.value.toLowerCase();
+              wordText.innerHTML = wordDisplay.join(" ");
+              winCheck = wordDisplay.join("");
+              console.log(winCheck);
+              status = true;
+            }
+          }
+          if (!status) {
+            triesLetters.innerHTML += inputValue.value.toLowerCase();
+            tries--;
+            drawArray[tries]();
+            triesNumber.innerHTML = `Restam ${tries} tentativas`;
+          }
+          if (tries == 0) {
+            triesNumber.innerHTML = "";
+            wordText.innerHTML = "Você perdeu :(";
+            triesNumber.innerHTML = `A palavra era ${randomWord}`;
+          }
+          if (winCheck === randomWord) {
+            wordText.innerHTML = "Ihuul!! Você ganhou :D";
+            triesNumber.innerHTML = "";
+          }
+  
+          inputValue.value = "";
+        };
+
+
+
       }
     });
-      buttonVerify.onclick = () => {
-        const answerArray = randomWord.split("");
-        status = false;
-        for (let j = 0; j < randomWord.length; j++) {
-          if (inputValue.value.toLowerCase() === answerArray[j]) {
-            wordDisplay[j] = inputValue.value.toLowerCase();
-            wordText.innerHTML = wordDisplay.join(" ");
-            winCheck = wordDisplay.join("");
-            console.log(winCheck);
-            status = true;
-          }
-        }
-        if (!status) {
-          triesLetters.innerHTML += inputValue.value.toLowerCase();
-          tries--;
-          drawArray[tries]();
-          triesNumber.innerHTML = `Restam ${tries} tentativas`;
-        }
-        if (tries == 0) {
-          triesNumber.innerHTML = "";
-          wordText.innerHTML = "Você perdeu :(";
-          triesNumber.innerHTML = `A palavra era ${randomWord}`;
-        }
-        if (winCheck === randomWord) {
-          wordText.innerHTML = "Ihuul!! Você ganhou :D";
-          triesNumber.innerHTML = "";
-        }
 
-        inputValue.value = "";
-      };
 
     restartBtn.addEventListener("click", () => {
       init();
