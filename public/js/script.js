@@ -110,13 +110,13 @@ const Words = [
 ];
 // ------------------- BEGIN PAGE ---------------------------------------------
 if (document.body.id === "start") {
-  document.querySelector("#Animal").onclick = () => {
+  document.querySelector("#btnAnimal").onclick = () => {
     localStorage.setItem("id", "Animal");
   };
-  document.querySelector("#Time").onclick = () => {
+  document.querySelector("#btnTime").onclick = () => {
     localStorage.setItem("id", "Time");
   };
-  document.querySelector("#Esportes").onclick = () => {
+  document.querySelector("#btnEsportes").onclick = () => {
     localStorage.setItem("id", "Esportes");
   };
 }

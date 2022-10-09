@@ -3,124 +3,118 @@ body {
   font-family: "Press Start 2P", cursive;
   color: #e2eefa;
 }
+/* Configuraçao Tamanho Conteiner */
+.bg-img,
 .container {
   width: 420px;
   position: relative;
+}
+#canvas,
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.bg-img {
-  width: 100%;
-  position: relative;
-  top: -120px;
-  left: 0;
-  z-index: 0;
-}
-#canvas {
+
+.containerBtnInitialPage {
   position: absolute;
+  top: 350px;
+}
+
+#triesNumber,
+#tries,
+#word,
+.title,
+.category,
+.buttonLabel,
+.containerBtnInitialPage {
+  z-index: 1;
+}
+#btnTime:hover,
+#btnAnimal:hover,
+#btnEsportes:hover,
+.button-desistir:hover,
+.button-reiniciar:hover {
+  background-color: #e2eefa;
+  color: #010b2f;
+}
+#triesNumber,
+#canvas,
+#tries,
+#word,
+.title,
+.category,
+.buttonLabel,
+.button-desistir,
+.button-reiniciar {
+  position: absolute;
+}
+.btnCategories,
+.button-desistir,
+.button-reiniciar {
+  background-color: #010b2f;
+  color: #e2eefa;
+  border-color: #e2eefa;
+  box-shadow: 5px 5px 0px 2px rgba(255, 255, 255);
+  -webkit-box-shadow: 5px 5px 0px 2px rgba(255, 255, 255);
+  -moz-box-shadow: 5px 5px 0px 2px rgba(255, 255, 255);
+}
+.button-desistir,
+.button-reiniciar {
+  top: 600px;
+}
+/* .button-desistir a,
+.button-reiniciar a,
+.containerBtnInitialPage a {
+  text-decoration: none;
+  color: #e2eefa;
+} */
+.btnInputLetter,
+.btnVerificar {
+  font-size: 0.6rem;
+}
+
+#canvas {
   width: 80px;
   height: 80px;
   top: 195px;
-  display: flex;
   z-index: 0;
-  justify-content: center;
-  align-items: center;
-}
-.title {
-  position: absolute;
-  top: 40px;
-  font-size: 32px;
-  z-index: 1;
-}
-.initial-page {
-  position: absolute;
-  top: 380px;
-  font-size: 32px;
-  z-index: 1;
-}
-.initial-page a {
-  color: #e2eefa;
-}
-.category {
-  position: absolute;
-  font-size: 24px;
-  top: 330px;
-  z-index: 1;
 }
 #tries {
-  position: absolute;
-  font-size: 16px;
   top: 360px;
   color: #d00000;
-  z-index: 1;
   letter-spacing: 7px;
 }
-.buttonLabel {
-  position: absolute;
-  top: 410px;
-  z-index: 1;
-  width: 200px;
-  height: 50px;
-}
-.buttonLabel .form-control, #button-addon2{
-  font-size: 10px;
-}
 #word {
-  position: absolute;
-  font-size: 16px;
   top: 500px;
-  z-index: 1;
 }
 #triesNumber {
-  position: absolute;
-  font-size: 14px;
   top: 530px;
-  z-index: 1;
 }
-.button-desistir{
+.bg-img {
+  /* width: 100%; */
+  /* width: 420px; */
+  /* position: relative; */
+  top: -120px;
+  /* left: 0; */
+  /* z-index: 0; */
+}
+.title {
+  top: 40px;
+  font-size: 2rem;
+}
+.category {
+  font-size: 1.5rem;
+  top: 330px;
+}
+.buttonLabel {
+  top: 410px;
+  width: 200px;
+  height: 40px;
+}
+.button-desistir {
   right: 240px;
 }
 .button-reiniciar {
   left: 220px;
-}
-.button-desistir, .button-reiniciar {
-  position: absolute;
-  font-size: 16px;
-  top: 600px;
-  background-color: #010b2f;
-  color: #e2eefa;
-  border-color: #e2eefa;
-  border-radius: 0;
-  z-index: 1;
-  box-shadow: 5px 5px 0px 2px rgba(255, 255, 255);
-  -webkit-box-shadow: 5px 5px 0px 2px rgba(255, 255, 255);
-  -moz-box-shadow: 5px 5px 0px 2px rgba(255,255,255);
-}
-.button-desistir a, .button-reiniciar a, .container-fluid a{
-  text-decoration: none;
-  color: #e2eefa;
-}
-
-.button-reiniciar:hover, .button-desistir:hover{
-  background-color: #e2eefa;
-  color: #010b2f;
-}
-.container-fluid{
-  position: absolute;
-  top: 350px;
-  z-index: 1;
-}
-.container-fluid .btn{
-  background-color: #010b2f;
-  color: #e2eefa;
-  border-color: #e2eefa;
-  border-radius: 0;
-  box-shadow: 4px 4px 0px 2px rgba(255, 255, 255);
-  -webkit-box-shadow: 4px 4px 0px 2px rgba(255, 255, 255);
-  -moz-box-shadow: 4px 4px 0px 2px rgba(255,255,255);
-}
-#Animal:hover, #Time:hover, #Esportes:hover{
-  background-color: #e2eefa;
-  color: #010b2f;
 }
