@@ -138,7 +138,6 @@ function init() {
   triesLetters.innerHTML = "";
   triesNumber.innerHTML = `Restam ${tries} tentativas`;
   categoryText.innerHTML = categoryChoice;
-  const status = false;
 
   if (document.body.id === "game") {
     categoryFiltered = Words.filter((word) => word.category === categoryChoice);
@@ -152,9 +151,6 @@ function init() {
       wordArray = word.split("");
       for (let i = 0; i < randomWord.length; i++) {
         wordDisplay.push("_");
-        // if (wordArray[i] !== "-") {
-        //   wordDisplay.push("_");
-        // }
       }
       return wordDisplay.join(" ");
     }
