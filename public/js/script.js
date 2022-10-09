@@ -158,40 +158,42 @@ function init() {
     wordText.innerHTML = generateAnswerDisplay(randomWord);
     triesLetters, (innerHTML = "");
 
-    buttonVerify.onclick = () => {
-      const answerArray = randomWord.split("");
-      status = false;
-      for (let j = 0; j < randomWord.length; j++) {
-        if (inputValue.value.toLowerCase() === answerArray[j]) {
-          wordDisplay[j] = inputValue.value.toLowerCase();
-          wordText.innerHTML = wordDisplay.join(" ");
-          winCheck = wordDisplay.join("");
-          console.log(winCheck);
-          status = true;
+    function buttonclick() {
+      buttonVerify.onclick = () => {
+        const answerArray = randomWord.split("");
+        status = false;
+        for (let j = 0; j < randomWord.length; j++) {
+          if (inputValue.value.toLowerCase() === answerArray[j]) {
+            wordDisplay[j] = inputValue.value.toLowerCase();
+            wordText.innerHTML = wordDisplay.join(" ");
+            winCheck = wordDisplay.join("");
+            console.log(winCheck);
+            status = true;
+          }
         }
-      }
-      if (!status) {
-        triesLetters.innerHTML += inputValue.value.toLowerCase();
-        tries--;
-        drawArray[tries]();
-        triesNumber.innerHTML = `Restam ${tries} tentativas`;
-      }
-      if (tries == 0) {
-        triesNumber.innerHTML = "";
-        wordText.innerHTML = "Você perdeu :(";
-        triesNumber.innerHTML = `A palavra era ${randomWord}`;
-      }
-      if (winCheck === randomWord) {
-        wordText.innerHTML = "Ihuul!! Você ganhou :D";
-        triesNumber.innerHTML = "";
-      }
+        if (!status) {
+          triesLetters.innerHTML += inputValue.value.toLowerCase();
+          tries--;
+          drawArray[tries]();
+          triesNumber.innerHTML = `Restam ${tries} tentativas`;
+        }
+        if (tries == 0) {
+          triesNumber.innerHTML = "";
+          wordText.innerHTML = "Você perdeu :(";
+          triesNumber.innerHTML = `A palavra era ${randomWord}`;
+        }
+        if (winCheck === randomWord) {
+          wordText.innerHTML = "Ihuul!! Você ganhou :D";
+          triesNumber.innerHTML = "";
+        }
 
-      inputValue.value = "";
-    };
-
-    inputValue.addEventListener("keyup",  (event) =>{
+        inputValue.value = "";
+      };
+    }
+    inputValue.addEventListener("keyup", (event) => {
       if (event.key === "Enter") {
-        buttonVerify.click();
+        buttonclick();
+        // buttonVerify.click();
       }
     });
     restartBtn.addEventListener("click", () => {
