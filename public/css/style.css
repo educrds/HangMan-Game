@@ -4,6 +4,10 @@ body {
   color: #e2eefa;
 }
 /* Configuraçao Tamanho Conteiner */
+.containerBtnInitialPage {
+  position: absolute;
+  top: 350px;
+}
 .bg-img,
 .container {
   width: 420px;
@@ -15,12 +19,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.containerBtnInitialPage {
-  position: absolute;
-  top: 350px;
-}
-
 #triesNumber,
 #tries,
 #word,
@@ -63,17 +61,10 @@ body {
 .button-reiniciar {
   top: 600px;
 }
-/* .button-desistir a,
-.button-reiniciar a,
-.containerBtnInitialPage a {
-  text-decoration: none;
-  color: #e2eefa;
-} */
 .btnInputLetter,
 .btnVerificar {
   font-size: 0.6rem;
 }
-
 #canvas {
   width: 80px;
   height: 80px;
@@ -92,12 +83,7 @@ body {
   top: 530px;
 }
 .bg-img {
-  /* width: 100%; */
-  /* width: 420px; */
-  /* position: relative; */
   top: -120px;
-  /* left: 0; */
-  /* z-index: 0; */
 }
 .title {
   top: 40px;

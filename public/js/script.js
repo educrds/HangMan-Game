@@ -160,7 +160,7 @@ function init() {
     triesLetters, (innerHTML = "");
 
     inputValue.addEventListener("keydown", (event) => {
-      event.preventDefault();
+      // event.preventDefault();
       if (event.key === "Enter") {
         buttonVerify.click();
       }
