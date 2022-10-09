@@ -194,12 +194,11 @@ function init() {
 
       inputValue.value = "";
     };
-
-    restartBtn.addEventListener("click", () => {
-      init();
-    });
   }
 }
+restartBtn.addEventListener("click", () => {
+  init();
+});
 function canva() {
   ctx.fillStyle = "#010b2f";
   ctx.strokeStyle = "#010b2f";
