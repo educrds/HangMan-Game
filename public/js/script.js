@@ -158,7 +158,12 @@ function init() {
     wordText.innerHTML = generateAnswerDisplay(randomWord);
     triesLetters, (innerHTML = "");
 
-    function buttonclick() {
+    inputValue.addEventListener("keyup", (event) => {
+      event.preventDefault();
+      if (event.key === "Enter") {
+        buttonVerify.click();
+      }
+    });
       buttonVerify.onclick = () => {
         const answerArray = randomWord.split("");
         status = false;
@@ -189,13 +194,7 @@ function init() {
 
         inputValue.value = "";
       };
-    }
-    inputValue.addEventListener("keyup", (event) => {
-      if (event.key === "Enter") {
-        buttonclick();
-        // buttonVerify.click();
-      }
-    });
+
     restartBtn.addEventListener("click", () => {
       init();
     });
