@@ -1,19 +1,23 @@
 let tries;
-let wordDisplay;
 let winCheck;
+let category;
+let wordArray;
+let randomWord;
+let wordDisplay;
+let categoryFiltered;
+
 // -------------------  CANVAS SETUP ---------------------------------------------
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 // ------------------- ID`s ------------------------------------------------------
-const categoryText = document.getElementById("categoryLabel");
 const wordText = document.getElementById("word");
-const buttonVerify = document.getElementById("button-addon2");
-const inputValue = document.getElementById("inputLetter");
-const triesNumber = document.getElementById("triesNumber");
+const categoryChoice = localStorage.getItem("id");
 const triesLetters = document.getElementById("tries");
 const restartBtn = document.getElementById("restart");
-
-const categoryChoice = localStorage.getItem("id");
+const inputValue = document.getElementById("inputLetter");
+const triesNumber = document.getElementById("triesNumber");
+const categoryText = document.getElementById("categoryLabel");
+const buttonVerify = document.getElementById("button-addon2");
 
 const Words = [
   {
@@ -109,7 +113,7 @@ const Words = [
     category: "Esportes",
   },
 ];
-// ------------------- BEGIN PAGE ---------------------------------------------
+// ------------------- STORING CHOICE IN LOCAL STORAGE ---------------------------------------------
 if (document.body.id === "initial-page") {
   document.querySelector("#btnAnimal").onclick = () => {
     localStorage.setItem("id", "Animal");
@@ -124,6 +128,7 @@ if (document.body.id === "initial-page") {
 
 init();
 
+// ------------------- BEGIN PAGE ---------------------------------------------
 function init() {
   inputValue.focus();
   ctx.clearRect(0, 0, 300, 300);
@@ -133,25 +138,23 @@ function init() {
   triesLetters.innerHTML = "";
   triesNumber.innerHTML = `Restam ${tries} tentativas`;
   categoryText.innerHTML = categoryChoice;
-  let status = false;
+  const status = false;
 
-  // ------------------- GAME PAGE ---------------------------------------------
   if (document.body.id === "game") {
-    let categoryFiltered = Words.filter(
-      (word) => word.category === categoryChoice
-    );
-    let randomWord =
+    categoryFiltered = Words.filter((word) => word.category === categoryChoice);
+    randomWord =
       categoryFiltered[Math.floor(Math.random() * categoryFiltered.length)]
         .word;
 
-    let wordDisplay = [];
+    wordDisplay = [];
 
     function generateAnswerDisplay(word) {
-      let wordArray = word.split("");
+      wordArray = word.split("");
       for (let i = 0; i < randomWord.length; i++) {
-        if (wordArray[i] !== "-") {
-          wordDisplay.push("_");
-        }
+        wordDisplay.push("_");
+        // if (wordArray[i] !== "-") {
+        //   wordDisplay.push("_");
+        // }
       }
       return wordDisplay.join(" ");
     }
@@ -166,14 +169,13 @@ function init() {
       }
     });
     buttonVerify.onclick = () => {
-      const answerArray = randomWord.split("");
       status = false;
+      const answerArray = randomWord.split("");
       for (let j = 0; j < randomWord.length; j++) {
         if (inputValue.value.toLowerCase() === answerArray[j]) {
           wordDisplay[j] = inputValue.value.toLowerCase();
           wordText.innerHTML = wordDisplay.join(" ");
           winCheck = wordDisplay.join("");
-          console.log(winCheck);
           status = true;
         }
       }
@@ -244,7 +246,6 @@ function legRight() {
 function legLeft() {
   draw(200, 200, 230, 260);
 }
-
 var drawArray = [
   legRight,
   legLeft,
