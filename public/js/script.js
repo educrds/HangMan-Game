@@ -169,8 +169,8 @@ function init() {
       }
     });
     buttonVerify.onclick = () => {
+      const status = false;
       const answerArray = randomWord.split("");
-      status = false;
       for (let j = 0; j < randomWord.length; j++) {
         if (inputValue.value.toLowerCase() === answerArray[j]) {
           wordDisplay[j] = inputValue.value.toLowerCase();
