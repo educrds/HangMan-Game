@@ -109,7 +109,7 @@ const Words = [
   },
 ];
 // ------------------- BEGIN PAGE ---------------------------------------------
-if (document.body.id === "start") {
+if (document.body.id === "initial-page") {
   document.querySelector("#btnAnimal").onclick = () => {
     localStorage.setItem("id", "Animal");
   };
