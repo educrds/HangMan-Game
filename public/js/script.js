@@ -1,10 +1,6 @@
 let tries;
 let winCheck;
 let category;
-let wordArray;
-let randomWord;
-let wordDisplay;
-let categoryFiltered;
 
 // -------------------  CANVAS SETUP ---------------------------------------------
 const canvas = document.getElementById("canvas");
@@ -140,15 +136,15 @@ function init() {
   categoryText.innerHTML = categoryChoice;
 
   if (document.body.id === "game") {
-    categoryFiltered = Words.filter((word) => word.category === categoryChoice);
-    randomWord =
+    let categoryFiltered = Words.filter((word) => word.category === categoryChoice);
+    let randomWord =
       categoryFiltered[Math.floor(Math.random() * categoryFiltered.length)]
         .word;
 
-    wordDisplay = [];
+    let wordDisplay = [];
 
     function generateAnswerDisplay(word) {
-      wordArray = word.split("");
+      let wordArray = word.split("");
       for (let i = 0; i < randomWord.length; i++) {
         wordDisplay.push("_");
       }
