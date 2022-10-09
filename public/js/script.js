@@ -159,8 +159,7 @@ function init() {
     wordText.innerHTML = generateAnswerDisplay(randomWord);
     triesLetters, (innerHTML = "");
 
-    inputValue.addEventListener("keydown", (event) => {
-      // event.preventDefault();
+    inputValue.addEventListener("keyup", (event) => {
       if (event.key === "Enter") {
         buttonVerify.click();
       }
