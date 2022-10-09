@@ -161,6 +161,7 @@ function init() {
 
     inputValue.addEventListener("keyup", (event) => {
       if (event.key === "Enter") {
+        event.stopImmediatePropagation();
         buttonVerify.click();
       }
     });
