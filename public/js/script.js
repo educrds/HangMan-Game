@@ -12,6 +12,7 @@ const inputValue = document.getElementById("inputLetter");
 const triesNumber = document.getElementById("triesNumber");
 const triesLetters = document.getElementById("tries");
 const restartBtn = document.getElementById("restart");
+
 const categoryChoice = localStorage.getItem("id");
 
 const Words = [
