@@ -5,6 +5,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 const wordText = document.getElementById('word');
+const category = document.querySelector('.category');
 const triesLetters = document.getElementById('tries');
 const restartBtn = document.getElementById('restart');
 const inputValue = document.getElementById('inputLetter');
@@ -19,7 +20,9 @@ const categoryChoice = localStorage.getItem('id');
 // ------------------- STORING CHOICE IN LOCAL STORAGE ---------------------------------------------
 if (document.body.id === 'initial-page') {
   categoriesButton.forEach((btn) =>
-    btn.addEventListener('click', (e) => localStorage.setItem('id', e.target.innerHTML))
+    btn.addEventListener('click', (e) =>
+      localStorage.setItem('id', e.target.innerHTML)
+    )
   );
 }
 
@@ -35,6 +38,7 @@ function init() {
   let winCheck = '';
 
   triesNumber.textContent = `Restam ${tries} tentativas`;
+  category.textContent = categoryChoice;
 
   if (document.body.id === 'game') {
     let categoryFiltered = words.filter((word) => word.category === categoryChoice);
@@ -60,7 +64,7 @@ function init() {
         buttonVerify.click();
       }
     });
-    
+
     buttonVerify.onclick = () => {
       let status = false;
       const answerArray = randomWord.split('');

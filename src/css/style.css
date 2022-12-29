@@ -1,6 +1,6 @@
 body {
   background-color: #010b2f;
-  font-family: "Press Start 2P", cursive;
+  font-family: 'Press Start 2P', cursive;
   color: #e2eefa;
 }
 /* Configuraçao Tamanho Conteiner */
@@ -64,6 +64,8 @@ body {
 .btnInputLetter,
 .btnVerificar {
   font-size: 0.6rem;
+  height: 40px;
+  width: 100px;
 }
 #canvas {
   width: 80px;
@@ -94,9 +96,7 @@ body {
   top: 330px;
 }
 .buttonLabel {
-  top: 410px;
-  width: 200px;
-  height: 40px;
+  top: 400px;
 }
 .button-desistir {
   right: 240px;
